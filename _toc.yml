@@ -1,6 +1,6 @@
 format: jb-book
 root: content/intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Fun Testing
+    chapters:
+    - content/Players/player.ipynb
