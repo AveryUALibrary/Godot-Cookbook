@@ -1,0 +1,6 @@
+format: jb-book
+root: content/intro
+chapters:
+- file: markdown
+- file: notebooks
+- file: markdown-notebooks
