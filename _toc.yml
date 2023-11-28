@@ -1,6 +1,8 @@
 format: jb-book
 root: content/intro
-chapters:
-- file: content/Players/intro
-  sections:
-  - file: content/Players/player
+parts:
+  - caption: Player Code
+    chapters:
+      - file: content/Players/intro
+      - sections:
+        - file: content/Players/player
