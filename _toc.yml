@@ -1,6 +1,6 @@
 format: jb-book
 root: content/intro
-parts:
-  - caption: Fun Testing
-    chapters:
-    - content/Players/player.ipynb
+chapters:
+- file: content/Players/intro
+  sections:
+  - file: content/Players/player
