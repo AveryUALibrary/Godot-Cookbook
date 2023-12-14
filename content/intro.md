@@ -1,4 +1,6 @@
-# Welcome to the University of Alabama Libraries' Godot Cookbook!
+# Welcome
+
+## The University of Alabama Libraries' Godot Cookbook
 
 This cookbook is a collection of recipes for using the [Godot](https://godotengine.org/) game engine. It is intended to be a living document, and will be updated as new recipes are added.
 
