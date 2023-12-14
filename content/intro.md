@@ -1,11 +1,16 @@
-# Welcome to your Jupyter Book
+# Welcome to the University of Alabama Libraries' Godot Cookbook!
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This cookbook is a collection of recipes for using the [Godot](https://godotengine.org/) game engine. It is intended to be a living document, and will be updated as new recipes are added.
 
-Check out the content pages bundled with this sample book to see more.
+## About Godot
 
-```{tableofcontents}
-```
+Godot is a free and open source game engine. It is available for Windows, Mac, and Linux, and can be downloaded from the [Godot website](https://godotengine.org/). Godot uses a custom scripting language called GDScript, which is similar to Python. It also supports C# and C++.
+
+## About this Cookbook
+
+This cookbook is intended to be a collection of recipes for using Godot. It is not intended to be a comprehensive guide to Godot, but rather a collection of recipes for common tasks. It is also not intended to be a tutorial on how to use Godot. If you are new to Godot, you may want to start with the [Godot documentation](https://docs.godotengine.org/en/stable/).
+
+## Contributing
+
+This cookbook is underneath a MIT license, and is open to contributions. If you would like to contribute, please pull the repository and submit a pull request.
+

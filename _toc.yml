@@ -1,8 +1,18 @@
 format: jb-book
 root: content/intro
 parts:
-  - caption: Player Code
+  - caption: World Code
     chapters:
-      - file: content/Players/intro
+      - file: content/World/intro
       - sections:
-        - file: content/Players/player
+        - file: content/World/world
+  # - Player Code
+  #   chapters:
+  #     - file: content/Player/intro
+  #     - sections:
+  #       - file: content/Player/player
+  # - caption: Enemy Code
+  #   chapters:
+  #     - file: content/Enemies/intro
+  #     - sections:
+  #       - file: content/Enemies/enemy
