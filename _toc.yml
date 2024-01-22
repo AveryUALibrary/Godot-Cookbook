@@ -3,5 +3,4 @@ root: content/intro
 parts:
   - caption: World Code
     chapters:
-      - file: content/World/intro
       - file: content/World/2d_perlin_noise_world_gen
