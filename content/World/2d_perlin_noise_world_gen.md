@@ -1,5 +1,11 @@
 # 2D Worlds with Perlin Noise and Tile Maps
 
+```
+Godot Version: 4.2.1
+Tested on: Janurary 22, 2024
+Created by Avery Fernandez
+```
+
 This recipe was created and tested on Godot 4.2. It covers how to create a 2D world using Perlin noise and tile maps.
 
 ## Create the World Scene
@@ -34,13 +40,13 @@ Now, you have a `TileMap` with a `TileSet` that contains the tiles you want to u
 
 ## Create the World Generation Script
 
-Now, let's create the script that will generate the world. Right click on the `World` node and select `New Script`. Name the script `world.gd`.
+Now, let's create the script that will generate the world. Right click on the `World` node and select `Attach Script`. Name the script `world.gd`.
 
 The way we will generate the world is by using Perlin noise. Perlin noise is a type of noise that is used to create smooth random values. It is often used to create terrain in games. We will use a combination of Perlin noise and tile maps to create our world.
 
 ### Import the Tile Map
 
-While holding `left Ctrl`, click and drag the `TileMap` node into the script. This will create a variable that references the `TileMap` node. We will use this variable to access the `TileMap` node from the script. You should see something like this:
+Click and drag the `TileMap` node into the script, before releasing the click hold down `Ctrl`. This will create a variable that references the `TileMap` node. We will use this variable to access the `TileMap` node from the script. You should see something like this:
 
 ```gdscript
 @onready var tile_map = $TileMap
@@ -48,7 +54,7 @@ While holding `left Ctrl`, click and drag the `TileMap` node into the script. Th
 
 ### Create our Perlin Noise Generator
 
-For our world generation, we want to simulate the real world. We will accomplish this by using Perlin noise to generate both the world altitude, but also the world temperature and humidity. We will use the altitude 3 in combination to determine what type of tile to use.
+For our world generation, we want to simulate the real world. We will accomplish this by using Perlin noise to generate both the world altitude, but also the world temperature and humidity. We will use the 3 parameters in combination to determine what type of tile to use.
 
 First, let's create the variables we will use to generate the world. Add the following variables to the script:
 
