@@ -81,6 +81,7 @@ func _ready():
     for x in range(-100, 100):
 		for y in range(-100, 100):
 			select_tile(Vector2(x, y))
+```
 
 ## Final Product
 
