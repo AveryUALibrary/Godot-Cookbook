@@ -44,14 +44,6 @@ For those who realize that the tile map is either too massive or too small, I wo
 
 ## Create the World Generation Script
 
-Now, let's create the script that will generate the world. Right click on the `World` node and select `Attach Script`. Name the script `world.gd`.
+Now, let's create the script that will generate the world. Right click on the `TileMap` node and select `Attach Script`. Name the script `world_generation.gd`.
 
 The way we will generate the world is by using Perlin noise. Perlin noise is a type of noise that is used to create smooth random values. It is often used to create terrain in games. We will use a combination of Perlin noise and tile maps to create our world.
-
-### Import the Tile Map
-
-Click and drag the `TileMap` node into the script, before releasing the click hold down `Ctrl`. This will create a variable that references the `TileMap` node. We will use this variable to access the `TileMap` node from the script. You should see something like this:
-
-```gdscript
-@onready var tile_map = $TileMap
-```

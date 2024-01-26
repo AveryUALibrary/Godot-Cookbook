@@ -66,7 +66,7 @@ func select_tile(tile_location: Vector2):
                 tile_id = 2
             else:
                 tile_id = 2
-    tile_map.set_cell(0, Vector2i(tile_location), tile_id, Vector2i(0, 0))
+    set_cell(0, Vector2i(tile_location), tile_id, Vector2i(0, 0))
 ```
 
 This function takes the tile location and uses the `get_world_data` function to get the altitude, temperature, and moisture. It then uses the altitude to determine what type of tile to use. It then sets the tile at the tile location to the tile id.
