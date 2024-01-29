@@ -3,8 +3,7 @@ root: content/intro
 parts:
   - caption: World Code
     chapters:
-    - url: https://averyualibrary.github.io/Godot-Cookbook/content/World/Perlin_Noise_Generation/tile_map.html
-      title: "World Generation with 2D Perlin Noise"
+    - file: content/World/Perlin_Noise_Generation/intro.md
       sections:
       - file: content/World/Perlin_Noise_Generation/tile_map
       - file: content/World/Perlin_Noise_Generation/2d_perlin_noise
