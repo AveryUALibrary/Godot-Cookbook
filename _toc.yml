@@ -3,7 +3,8 @@ root: content/intro
 parts:
   - caption: World Code
     chapters:
-    - file: content/World/Perlin_Noise_Generation/intro.md
+    - file: content/World/Perlin_Noise_Generation/tile_map
+      title: "World Generation with 2D Perlin Noise"
       sections:
       - file: content/World/Perlin_Noise_Generation/tile_map
       - file: content/World/Perlin_Noise_Generation/2d_perlin_noise
