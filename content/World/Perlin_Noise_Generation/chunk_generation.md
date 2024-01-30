@@ -150,3 +150,17 @@ func _on_player_moved(player_position):
 ```
 
 This function takes the player's position and converts it to a tile position. It then converts the tile position to a chunk position. This allows us to generate a list of chunks around the player. We then loop through the chunks that are loaded, and unload chunks that are too far away from the player. We then loop through the chunks that are not loaded, and load chunks that are close to the player.
+
+We use `call_deferred` to call the `load_chunk` and `unload_chunk` functions. This allows us to call the functions at the end of the frame, instead of immediately. This allows us to avoid a bug where the player's position is not updated before the chunks are generated. It also offloads the chunk generation to only run when it has a chance to run and not slowing down the game.
+
+### Disable the Old Generation Code
+
+Now that we have the new generation code, we can disable the old generation code. Add the following code to the `world_generation.gd` script:
+
+```gdscript
+func _ready():
+    # ... previous code ...
+	#for x in range(-100, 100):
+		#for y in range(-100, 100):
+			#select_tile(Vector2(x, y))
+```
