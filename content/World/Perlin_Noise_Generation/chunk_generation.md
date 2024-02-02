@@ -56,9 +56,7 @@ const SPEED = 300.0
 
 func _physics_process(_delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var x_axis = Input.get_axis("Left", "Right")
-	var y_axis = Input.get_axis("Up", "Down")
-	var direction = Vector2(x_axis, y_axis).normalized()
+	var direction = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 	if direction:
 		velocity = direction * SPEED
 	else:
@@ -67,6 +65,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	Globals.emit_signal("player_moved", global_position)
 ```
+
 
 ## Generate Chunks Around the Player
 
@@ -164,3 +163,19 @@ func _ready():
 		#for y in range(-100, 100):
 			#select_tile(Vector2(x, y))
 ```
+
+## Combine the Player and the World Generation
+
+> **_NOTE:_**  This block is only necessary for testing, please put the `TileMap` and `player` wherever you need them in your game.
+
+Now that we have the `player` node and the `TileMap` node, we need to combine the two. We will do this by creating a new scene that contains both the `player` node and the `TileMap` node.
+
+Create a new scene by clicking the `+` in the middle of the screen and then clicking `2D Scene`. Go ahead and name the scene `World`. Now, drag the `player` scene from the `FileSystem` panel into the `World` scene. Now, drag the `TileMap` scene from the `FileSystem` panel into the `World` scene.
+
+## Final Product
+
+Now, when you run the game, you should see chunks being generated around the player. As the player moves, chunks will be generated and unloaded. This allows us to have an infinite world, without generating the entire world at once.
+
+![Chunk Generation with Player Tracking](images/chunk.gif)
+
+This is with a `TileMap` scale of 0.25.
