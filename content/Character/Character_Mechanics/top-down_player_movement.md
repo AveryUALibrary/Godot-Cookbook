@@ -1,7 +1,7 @@
 # Top-down Player Movement
 ```
 Godot Version: 4.2.1
-Tested on: February 1, 2024
+Tested on: February 6, 2024
 Created by Sebastian Shirk
 ```
 This recipe will cover how to create different top-down player movement systems. These systems will include `8-way movement`, `rotation-based`, `mouse-rotation`, `impulse`, and `click-to-move`. This recipe will also cover `screen wrap`.
@@ -154,7 +154,7 @@ Note:
 * This code is much more efficient because we are simply telling our player to rotate to the angle of the mouse position, followed by getting our inputs and moving accordingly.
 
 ## Using Impulse Movement
-
+![alt text](8ew1n0.gif)
 * Impusle movement is movement that constantly adds to the players velocity. This is useful for games that want to build up to speed or for games that want less friction, like a space game.
 * Create a new script and attach it to the `Player` node.
 * Make sure ou have the `move_speed` variable from the previous example, but tuned down a little. Also add the `rotation_speed` variable if you want to use rotation based movement.
@@ -171,3 +171,56 @@ var rotation_speed = 3
 	move_and_slide()
 ```
 * As we can see, we are using the same code as the rotation based movement, but we are adding to the players velocity instead of setting it. This will give us the "impulse" affect we need to move the player.
+* This will give us a lot of sliding with our player. If you want to add friction to your player, you can add the following code to the end of the physics process function:
+```gdscript
+	velocity = lerp(velocity, Vector2.ZERO, 1 * delta)
+	if velocity.length() >= -10 && velocity.length() <= 10:
+		velocity = Vector2.ZERO
+```
+* Now we have an artificial friction that will slow our player down over time. 
+
+## Click-to-Move Movement
+![alt text](8ew5tw.gif)
+* We want to create a script that will handle movement based on clicking the mouse.
+* Create a new script and attach it to the `Player` node.
+* Make sure ou have the `move_speed` variable from the previous example as well as a new target variable.
+```gdscript
+var move_speed = 500
+@onready var target = position
+```
+* Here is the code for the `process` function:
+```gdscript
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		target = get_global_mouse_position()
+		
+	velocity = position.direction_to(target) * speed
+	look_at(target)
+	if position.distance_to(target) > 10:
+		move_and_slide()
+
+```
+* In this function we can see that we are getting the mouse position using `get_global_mouse_position()`. We are then setting the players target to the mouse position. We are then getting the direction to the target and setting the players velocity to the direction times the speed. We are then using the `look_at` function to make the player look at the target. We are then checking if the player is close to the target and if it isn't, we are moving the player using the `move_and_slide` function. When the player gets close enough to the target, the player will stop moving.
+```gdscript
+Note:
+    The `look_at` function is used for a left-facing sprite and will not work properly for a sprite facing a different direction. You will have to use a different method to make the player look at the target.
+```
+
+## Screen Wrap
+![alt text](8ew796.gif)
+* Screen wrap is a feature that will allow the player to wrap around the screen when they reach the edge. 
+* In your player script, add a new variable:
+``` gdscript
+@onready var screen_size = get_viewport_rect().size
+```
+* In your player script, add the following code to the `process` function:
+```gdscript
+    if position.x > screen_size.x:
+        position.x = 0
+    if position.x < 0:
+        position.x = screen_size.x
+    if position.y > screen_size.y:
+        position.y = 0
+    if position.y < 0:
+        position.y = screen_size.y
+```
+* This code will check if the player is at the edge of the screen and if it is, it will move the player to the opposite side of the screen. This will give us the screen wrap affect we want.
