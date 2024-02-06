@@ -6,10 +6,8 @@ Tested on: February 6, 2024
 Created by Sebastian Shirk
 ```
 This recipe will cover how to create different top-down player movement systems. These systems will include `8-way movement`, `rotation-based`, `mouse-rotation`, `impulse`, and `click-to-move`. This recipe will also cover `screen wrap`.
-```
-Note:
-    This recipe will be tailored to an upwards facing sprite. If you are using a different sprite, you may have to adjust the code to fit your needs when using rotation-based and mouse-rotation movement. Notes will be provided to show you where to make these changes.
-```
+
+> **Note:** This recipe will be tailored to an upwards facing sprite. If you are using a different sprite, you may have to adjust the code to fit your needs when using rotation-based and mouse-rotation movement. Notes will be provided to show you where to make these changes.
 
 ## Setting up the Character
 * Each one of these movement systems will use the same setup for the player character.
@@ -108,10 +106,9 @@ var rotation_speed = 3
 	
 	move_and_slide()
 ```
-```
-Note:
-    The -transform.y is used for an upward facing sprite. Change this value if your sprite is facing a different direction.
-```
+
+> **Note:** The -transform.y is used for an upward facing sprite. Change this value if your sprite is facing a different direction.
+
 * This code is much more efficient because we are using the `Input` class to get the axis of the keys we are pressing. We are then multiplying the axis by the rotation speed and delta to get the rotation we need. We are then multiplying the axis by the move speed and the players rotation to get the velocity we need to move the player. We then use the `move_and_slide` function to move the player. This function will move us and handle any collisions for us.
 
 
@@ -148,10 +145,9 @@ var move_speed = 500
 	
 	move_and_slide()
 ```
-```
-Note:
-    The + (0.5 * PI) is used for an upward facing sprite. Change this value if your sprite is facing a different direction.
-```
+
+> **Note:** The + (0.5 * PI) is used for an upward facing sprite. Change this value if your sprite is facing a different direction.
+
 * This code is much more efficient because we are simply telling our player to rotate to the angle of the mouse position, followed by getting our inputs and moving accordingly.
 
 ## Using Impulse Movement
@@ -201,10 +197,8 @@ var move_speed = 500
 
 ```
 * In this function we can see that we are getting the mouse position using `get_global_mouse_position()`. We are then setting the players target to the mouse position. We are then getting the direction to the target and setting the players velocity to the direction times the speed. We are then using the `look_at` function to make the player look at the target. We are then checking if the player is close to the target and if it isn't, we are moving the player using the `move_and_slide` function. When the player gets close enough to the target, the player will stop moving.
-```gdscript
-Note:
-    The `look_at` function is used for a left-facing sprite and will not work properly for a sprite facing a different direction. You will have to use a different method to make the player look at the target.
-```
+
+> **Note:** The `look_at` function is used for a left-facing sprite and will not work properly for a sprite facing a different direction. You will have to use a different method to make the player look at the target.
 
 ## Screen Wrap
 ![alt text](8ew796.gif)
