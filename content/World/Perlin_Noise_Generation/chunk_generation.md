@@ -30,7 +30,7 @@ This script is setup to store our global variables like the chunk size and view 
 Now, we need to connect the player's movement to the global script. You can either do this by adding the following code to your player script in the `func _physics_process(delta: float):` function:
 
 ```gdscript
-emit_signal("player_moved", global_position)
+Globals.player_moved.emit(global_position)
 ```
 
 Or, if you don't have a player, we can create one really quickly by doing the following:
@@ -63,7 +63,7 @@ func _physics_process(_delta):
 		velocity = Vector2.ZERO
 
 	move_and_slide()
-	Globals.emit_signal("player_moved", global_position)
+	Globals.player_moved.emit(global_position)
 ```
 
 
@@ -133,7 +133,7 @@ Add the following code to the `world_generation.gd` script:
 ```gdscript
 func _ready():
     # ... previous code ...
-    Globals.connect("player_moved", _on_player_moved)
+    Globals.player_moved.connect(_on_player_moved)
 
 func _on_player_moved(player_position):
 	var player_to_tile = local_to_map(to_local(player_position))
