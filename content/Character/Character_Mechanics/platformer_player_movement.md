@@ -10,5 +10,9 @@ Created by Sebastian Shirk
 * Creat a new scene and make it a `CharacterBody2D`
 * Add a `Sprite` as a child of the `CharacterBody2D` and set the `Texture` to a character sprite.
 * Add a `CollisionShape2D` or a `CollisionPloygon2D` as a child of the `CharacterBody2D` and set the `Shape`. If you are using a `CollisionPloygon2D` you will need to set the `Polygon` points to match the shape of the character sprite.
+* Finally, add a `Camera2D` as a child of your character
 * With our character created, we can now add a script to the `CharacterBody2D` to control its movement.
 * Click on your `CharacterBody2D` and click the `Attach Script` button or you can right-click on your `CharacterBody2D` and select `Attach Script`.
+* Before clicking `Create`, change the `Template` to `CharacterBody2D: Basic Movement` and click `Create`.
+* This will give us a basic script to control our character's movement.
+* 
